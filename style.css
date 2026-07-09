@@ -1,47 +1,317 @@
-body{margin:0;font-family:Segoe UI,sans-serif;background:linear-gradient(#fff9d6,#ffe27a);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}.container{max-width:900px;width:100%;background:rgba(255,255,255,.75);backdrop-filter:blur(10px);border-radius:32px;padding:36px}.logo{display:block;width:110px;margin:0 auto}h1,p{text-align:center}.box{margin:18px 0}textarea{width:100%;height:180px;border-radius:24px;border:3px solid #ffd54a;padding:18px;font-size:18px}.actions{display:flex;gap:12px;justify-content:center}button{border:none;border-radius:18px;padding:12px 20px;background:#ffd54a}button{border:none;border-radius:18px;padding:12px 20px;background:#ffd54a}
+/* ==========================
+   🐣 JeabTool - Fix Text
+   Version 2.0 UI
+========================== */
 
-/* V1.4 decorative upgrade */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+
+    background:
+    radial-gradient(circle at top left,#fff9d9 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#ffe98d 0%,transparent 40%),
+    linear-gradient(135deg,#fff8d5,#ffe27a);
+
+    overflow-x:hidden;
+}
+
+/* จุดวิบวับ */
 body::before{
-    content:'';
+    content:"";
     position:fixed;
     inset:0;
+
     background-image:
-    radial-gradient(circle at 10% 10%,rgba(255,255,255,.5) 2px,transparent 3px),
-    radial-gradient(circle at 80% 20%,rgba(255,255,255,.4) 3px,transparent 4px);
+    radial-gradient(#ffffffaa 2px,transparent 2px),
+    radial-gradient(#ffffff88 1px,transparent 1px);
+
+    background-size:
+    120px 120px,
+    60px 60px;
+
+    opacity:.4;
     pointer-events:none;
 }
 
+/* ========================= */
+
 .container{
+
+    width:min(900px,95vw);
+
+    background:rgba(255,255,255,.65);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:35px;
+
+    padding:40px;
+
+    border:3px solid rgba(255,255,255,.7);
+
+    box-shadow:
+    0 25px 50px rgba(0,0,0,.15);
+
     position:relative;
+
     overflow:hidden;
+
 }
 
+/* เมฆ */
+
 .container::before{
-    content:'☁️   ☁️   🌼';
+
+    content:"☁️";
+
     position:absolute;
-    top:10px;
-    left:20px;
-    font-size:28px;
+
+    left:40px;
+
+    top:20px;
+
+    font-size:45px;
+
     opacity:.7;
+
 }
 
 .container::after{
-    content:'🐣';
+
+    content:"☁️";
+
     position:absolute;
-    right:20px;
-    bottom:20px;
-    font-size:48px;
+
+    right:50px;
+
+    top:30px;
+
+    font-size:38px;
+
+    opacity:.6;
+
 }
 
+/* ========================= */
+
+.logo{
+
+    width:120px;
+
+    display:block;
+
+    margin:auto;
+
+    margin-bottom:15px;
+
+    filter:drop-shadow(0 10px 18px rgba(0,0,0,.18));
+
+}
+
+/* ========================= */
+
+h1{
+
+    text-align:center;
+
+    color:#604800;
+
+    font-size:40px;
+
+    margin-bottom:10px;
+
+}
+
+p{
+
+    text-align:center;
+
+    font-weight:bold;
+
+    color:#8b6a00;
+
+    margin-bottom:35px;
+
+}
+
+/* ========================= */
+
+.box{
+
+    margin-bottom:22px;
+
+}
+
+label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:#5e4700;
+
+}
+
+/* ========================= */
+
 textarea{
-    background:#fffefb;
-    border-style:solid;
+
+    width:100%;
+
+    height:180px;
+
+    border:none;
+
+    border-radius:28px;
+
+    padding:20px;
+
+    font-size:18px;
+
+    resize:none;
+
+    background:#fffdf6;
+
+    box-shadow:
+    inset 0 0 0 3px #ffd64c,
+    0 8px 18px rgba(255,212,76,.25);
+
+    transition:.25s;
+
+}
+
+textarea:focus{
+
+    outline:none;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+
+    inset 0 0 0 3px #ffc400,
+
+    0 0 25px rgba(255,211,77,.6);
+
+}
+
+/* ========================= */
+
+.actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    margin:25px 0;
+
 }
 
 button{
+
+    border:none;
+
+    border-radius:18px;
+
+    padding:14px 28px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    background:
+
+    linear-gradient(
+
+    #ffe97f,
+
+    #ffd137
+
+    );
+
+    box-shadow:
+
+    0 10px 18px rgba(0,0,0,.12);
+
     transition:.25s;
+
 }
 
 button:hover{
-    box-shadow:0 10px 24px rgba(255,210,0,.35);
+
+    transform:
+
+    translateY(-3px)
+
+    scale(1.04);
+
+}
+
+button:active{
+
+    transform:scale(.96);
+
+}
+
+/* ========================= */
+
+footer{
+
+    margin-top:30px;
+
+    text-align:center;
+
+    color:#7d6200;
+
+    font-size:15px;
+
+}
+
+/* ========================= */
+
+@media(max-width:700px){
+
+.logo{
+
+width:90px;
+
+}
+
+h1{
+
+font-size:28px;
+
+}
+
+textarea{
+
+height:150px;
+
+}
+
+.container{
+
+padding:25px;
+
+}
+
 }
