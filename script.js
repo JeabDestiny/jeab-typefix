@@ -1,1 +1,9 @@
-const m={'1': 'ๅ', '2': '/', '3': '-', '4': 'ภ', '5': 'ถ', '6': 'ุ', '7': 'ึ', '8': 'ค', '9': 'ต', '0': 'จ', '-': 'ข', '=': 'ช', 'q': 'ๆ', 'w': 'ไ', 'e': 'ำ', 'r': 'พ', 't': 'ะ', 'y': 'ั', 'u': 'ี', 'i': 'ร', 'o': 'น', 'p': 'ย', '[': 'บ', ']': 'ล', '\\': 'ฃ', 'a': 'ฟ', 's': 'ห', 'd': 'ก', 'f': 'ด', 'g': 'เ', 'h': '้', 'j': '่', 'k': 'า', 'l': 'ส', ';': 'ว', "'": 'ง', 'z': 'ผ', 'x': 'ป', 'c': 'แ', 'v': 'อ', 'b': 'ิ', 'n': 'ื', 'm': 'ท', ',': 'ม', '.': 'ใ', '/': 'ฝ', '`': '_'};const r={'ๅ': '1', '/': '2', '-': '3', 'ภ': '4', 'ถ': '5', 'ุ': '6', 'ึ': '7', 'ค': '8', 'ต': '9', 'จ': '0', 'ข': '-', 'ช': '=', 'ๆ': 'q', 'ไ': 'w', 'ำ': 'e', 'พ': 'r', 'ะ': 't', 'ั': 'y', 'ี': 'u', 'ร': 'i', 'น': 'o', 'ย': 'p', 'บ': '[', 'ล': ']', 'ฃ': '\\', 'ฟ': 'a', 'ห': 's', 'ก': 'd', 'ด': 'f', 'เ': 'g', '้': 'h', '่': 'j', 'า': 'k', 'ส': 'l', 'ว': ';', 'ง': "'", 'ผ': 'z', 'ป': 'x', 'แ': 'c', 'อ': 'v', 'ิ': 'b', 'ื': 'n', 'ท': 'm', 'ม': ',', 'ใ': '.', 'ฝ': '/', '_': '`'};const i=document.getElementById('input'),o=document.getElementById('output');i.oninput=()=>{let t=i.value;let th=/[ก-๙]/.test(t);o.value=[...t].map(c=>th?(r[c]||c):(m[c]||c)).join('');};
+const input=document.getElementById('input');
+const output=document.getElementById('output');
+const copyBtn=document.getElementById('copyBtn');
+const clearBtn=document.getElementById('clearBtn');
+const m={'l':'ส',';':'ว','v':'ั','f':'ด','u':'ี','0':'จ','h':'้','k':'า'};
+const r={};for(const k in m)r[m[k]]=k;
+input.addEventListener('input',()=>{const t=input.value;const th=/[ก-๙]/.test(t);output.value=[...t].map(c=>th?(r[c]||c):(m[c]||c)).join('');});
+copyBtn.onclick=async()=>{await navigator.clipboard.writeText(output.value);alert('🐣 คัดลอกแล้ว');};
+clearBtn.onclick=()=>{input.value='';output.value='';input.focus();};
