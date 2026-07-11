@@ -1,108 +1,275 @@
 /* ==========================
    🐣 JeabTool - Fix Text
-   Version 2.0 UI
 ========================== */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:"Segoe UI",sans-serif;
+}
+
+html,
+body{
+    width:100%;
+    min-height:100%;
 }
 
 body{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:40px;
+
+    font-family:
+    "Segoe UI",
+    sans-serif;
 
     background:
-    radial-gradient(circle at top left,#fff9d9 0%,transparent 35%),
-    radial-gradient(circle at bottom right,#ffe98d 0%,transparent 40%),
-    linear-gradient(135deg,#fff8d5,#ffe27a);
+    linear-gradient(
+    180deg,
+    #FFFDF2 0%,
+    #FFF3C6 50%,
+    #FFE27A 100%
+    );
 
-    overflow-x:hidden;
-}
+    display:flex;
 
-/* จุดวิบวับ */
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
+    justify-content:center;
 
-    background-image:
-    radial-gradient(#ffffffaa 2px,transparent 2px),
-    radial-gradient(#ffffff88 1px,transparent 1px);
-
-    background-size:
-    120px 120px,
-    60px 60px;
-
-    opacity:.4;
-    pointer-events:none;
-}
-
-/* ========================= */
-
-.container{
-
-    width:min(900px,95vw);
-
-    background:rgba(255,255,255,.65);
-
-    backdrop-filter:blur(18px);
-
-    border-radius:35px;
+    align-items:center;
 
     padding:40px;
 
-    border:3px solid rgba(255,255,255,.7);
-
-    box-shadow:
-    0 25px 50px rgba(0,0,0,.15);
+    overflow-x:hidden;
 
     position:relative;
 
+}
+
+/* ==========================
+      Background
+========================== */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
     overflow:hidden;
+
+    pointer-events:none;
 
 }
 
-/* เมฆ */
+/* Grid */
 
-.container::before{
+.background::before{
 
-    content:"☁️";
+    content:"";
 
     position:absolute;
 
-    left:40px;
+    inset:0;
 
-    top:20px;
+    background-image:
 
-    font-size:45px;
+    linear-gradient(
+    rgba(255,255,255,.3) 1px,
+    transparent 1px
+    ),
+
+    linear-gradient(
+    90deg,
+    rgba(255,255,255,.3) 1px,
+    transparent 1px
+    );
+
+    background-size:40px 40px;
+
+    opacity:.4;
+
+}
+
+/* ==========================
+        Clouds
+========================== */
+
+.cloud{
+
+    position:absolute;
+
+    background:white;
+
+    border-radius:100px;
 
     opacity:.7;
 
+    filter:blur(.5px);
+
 }
 
-.container::after{
+.cloud::before,
+.cloud::after{
 
-    content:"☁️";
+    content:"";
 
     position:absolute;
 
-    right:50px;
+    background:white;
 
-    top:30px;
-
-    font-size:38px;
-
-    opacity:.6;
+    border-radius:50%;
 
 }
 
-/* ========================= */
+.cloud1{
+
+    width:180px;
+
+    height:55px;
+
+    top:80px;
+
+    left:60px;
+
+}
+
+.cloud1::before{
+
+    width:70px;
+
+    height:70px;
+
+    left:18px;
+
+    top:-25px;
+
+}
+
+.cloud1::after{
+
+    width:85px;
+
+    height:85px;
+
+    right:20px;
+
+    top:-35px;
+
+}
+
+.cloud2{
+
+    width:140px;
+
+    height:45px;
+
+    top:150px;
+
+    right:120px;
+
+}
+
+.cloud2::before{
+
+    width:60px;
+
+    height:60px;
+
+    left:15px;
+
+    top:-20px;
+
+}
+
+.cloud2::after{
+
+    width:70px;
+
+    height:70px;
+
+    right:15px;
+
+    top:-25px;
+
+}
+
+.cloud3{
+
+    width:110px;
+
+    height:38px;
+
+    bottom:120px;
+
+    left:180px;
+
+}
+
+.cloud3::before{
+
+    width:50px;
+
+    height:50px;
+
+    left:10px;
+
+    top:-18px;
+
+}
+
+.cloud3::after{
+
+    width:55px;
+
+    height:55px;
+
+    right:8px;
+
+    top:-20px;
+
+}
+
+/* ==========================
+        Card
+========================== */
+
+.card{
+
+    width:100%;
+
+    max-width:920px;
+
+    background:
+
+    rgba(
+    255,
+    255,
+    255,
+    .72
+    );
+
+    backdrop-filter:
+
+    blur(18px);
+
+    border-radius:35px;
+
+    padding:45px;
+
+    box-shadow:
+
+    0 20px 45px
+
+    rgba(0,0,0,.15);
+
+    border:
+
+    2px solid
+
+    rgba(255,255,255,.65);
+
+}
+
+/* ==========================
+       Logo
+========================== */
 
 .logo{
 
@@ -114,37 +281,46 @@ body::before{
 
     margin-bottom:15px;
 
-    filter:drop-shadow(0 10px 18px rgba(0,0,0,.18));
+    filter:
+
+    drop-shadow(
+    0 10px 20px
+    rgba(0,0,0,.2)
+    );
 
 }
 
-/* ========================= */
+/* ==========================
+      Title
+========================== */
 
 h1{
 
     text-align:center;
 
-    color:#604800;
+    color:#6A5000;
 
-    font-size:40px;
+    font-size:38px;
 
-    margin-bottom:10px;
+    margin-bottom:8px;
 
 }
 
-p{
+.subtitle{
 
     text-align:center;
 
-    font-weight:bold;
+    color:#8D7000;
 
-    color:#8b6a00;
+    font-size:18px;
 
     margin-bottom:35px;
 
 }
 
-/* ========================= */
+/* ==========================
+       Boxes
+========================== */
 
 .box{
 
@@ -158,15 +334,11 @@ label{
 
     margin-bottom:10px;
 
-    font-size:18px;
-
     font-weight:bold;
 
-    color:#5e4700;
+    color:#6A5000;
 
 }
-
-/* ========================= */
 
 textarea{
 
@@ -174,21 +346,25 @@ textarea{
 
     height:180px;
 
-    border:none;
-
-    border-radius:28px;
-
-    padding:20px;
-
-    font-size:18px;
-
     resize:none;
 
-    background:#fffdf6;
+    border:none;
+
+    border-radius:22px;
+
+    background:#FFFDF7;
+
+    padding:18px;
+
+    font-size:17px;
 
     box-shadow:
-    inset 0 0 0 3px #ffd64c,
-    0 8px 18px rgba(255,212,76,.25);
+
+    inset 0 0 0 3px #FFD64C,
+
+    0 10px 18px
+
+    rgba(255,212,76,.18);
 
     transition:.25s;
 
@@ -202,25 +378,29 @@ textarea:focus{
 
     box-shadow:
 
-    inset 0 0 0 3px #ffc400,
+    inset 0 0 0 3px #FFC400,
 
-    0 0 25px rgba(255,211,77,.6);
+    0 0 18px
+
+    rgba(255,196,0,.45);
 
 }
 
-/* ========================= */
+/* ==========================
+       Buttons
+========================== */
 
-.actions{
+.button-group{
 
     display:flex;
 
-    justify-content:center;
-
     gap:18px;
+
+    justify-content:center;
 
     flex-wrap:wrap;
 
-    margin:25px 0;
+    margin-bottom:25px;
 
 }
 
@@ -228,29 +408,33 @@ button{
 
     border:none;
 
+    cursor:pointer;
+
     border-radius:18px;
 
     padding:14px 28px;
 
-    cursor:pointer;
-
-    font-size:17px;
+    font-size:16px;
 
     font-weight:bold;
+
+    color:#5D4700;
 
     background:
 
     linear-gradient(
 
-    #ffe97f,
+    #FFE77A,
 
-    #ffd137
+    #FFD13A
 
     );
 
     box-shadow:
 
-    0 10px 18px rgba(0,0,0,.12);
+    0 10px 18px
+
+    rgba(0,0,0,.12);
 
     transition:.25s;
 
@@ -260,35 +444,81 @@ button:hover{
 
     transform:
 
-    translateY(-3px)
-
-    scale(1.04);
+    translateY(-3px);
 
 }
 
 button:active{
 
-    transform:scale(.96);
+    transform:
+
+    scale(.96);
 
 }
 
-/* ========================= */
+/* ==========================
+       Footer
+========================== */
 
 footer{
 
-    margin-top:30px;
-
     text-align:center;
 
-    color:#7d6200;
+    margin-top:30px;
 
-    font-size:15px;
+    color:#826700;
 
 }
 
-/* ========================= */
+/* ==========================
+       Toast
+========================== */
+
+#toast{
+
+    position:fixed;
+
+    bottom:30px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:#FFD84A;
+
+    color:#5E4700;
+
+    padding:14px 24px;
+
+    border-radius:15px;
+
+    font-weight:bold;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.35s;
+
+}
+
+#toast.show{
+
+    opacity:1;
+
+}
+
+/* ==========================
+      Responsive
+========================== */
 
 @media(max-width:700px){
+
+.card{
+
+padding:25px;
+
+}
 
 .logo{
 
@@ -305,12 +535,6 @@ font-size:28px;
 textarea{
 
 height:150px;
-
-}
-
-.container{
-
-padding:25px;
 
 }
 
